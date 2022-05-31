@@ -10,7 +10,7 @@ jobs:
     name: Release Please
     runs-on: ubuntu-latest
     permissions: write-all
-    if: github.repository == 'devtomio/procfile'
+    if: github.repository == 'devtomio/thread-amount'
 
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}

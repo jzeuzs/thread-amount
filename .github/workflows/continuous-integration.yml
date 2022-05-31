@@ -85,7 +85,7 @@ jobs:
             export PATH="/usr/local/cargo/bin:$PATH"
           run: |
             export PATH="/usr/local/cargo/bin:$PATH"
-            curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.cargo}/bin
+            curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C /usr/local/cargo/bin
             cargo nextest run
 
   fmt:
