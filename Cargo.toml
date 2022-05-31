@@ -1,0 +1,23 @@
+[package]
+name = "thread-amount"
+version = "0.1.0"
+edition = "2021"
+description = "Get the amount of threads in the current process"
+keywords = ["thread", "amount", "process", "number", "current"]
+categories = ["os", "os::windows-apis", "os::unix-apis"]
+repository = "https://github.com/devtomio/thread-amount"
+documentation = "https://docs.rs/thread-amount"
+authors = ["Tomio <mail@tom1o.space>"]
+readme = "README.md"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[target."cfg(windows)".dependencies]
+field-offset = "0.3.4"
+
+[target."cfg(windows)".dependencies.windows]
+version = "0.37.0"
+features = ["alloc", "Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
