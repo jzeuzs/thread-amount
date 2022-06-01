@@ -1,7 +1,7 @@
 use std::num::NonZeroUsize;
 
-#[cfg_attr(target_os = "unix", path = "windows.rs")]
-#[cfg_attr(target_family = "windows", path = "unix.rs")]
+#[cfg_attr(target_os = "unix", path = "unix.rs")]
+#[cfg_attr(target_family = "windows", path = "windows.rs")]
 mod implementation;
 
 pub fn thread_amount() -> Option<NonZeroUsize> {
