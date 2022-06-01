@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://github.com/devtomio/thread-amount/compare/v0.1.0...v0.1.1) (2022-06-01)
+
+
+### Bug Fixes
+
+* non-existent file in readme ([a35ce29](https://github.com/devtomio/thread-amount/commit/a35ce2911a6246e59396d77c9577499e0c866dd2))
+
 ## 0.1.0 (2022-06-01)
 
 

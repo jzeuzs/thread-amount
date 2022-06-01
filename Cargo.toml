@@ -1,6 +1,6 @@
 [package]
 name = "thread-amount"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Get the amount of threads in the current process"
 keywords = ["thread", "amount", "process", "number", "current"]
