@@ -4,10 +4,13 @@ use std::num::NonZeroUsize;
 #[cfg_attr(target_family = "windows", path = "windows.rs")]
 mod implementation;
 
+/// Gets the amount of threads for the current process.
+/// Returns `None` if there are no threads.
 pub fn thread_amount() -> Option<NonZeroUsize> {
     implementation::thread_amount()
 }
 
+/// Check if the current process is single-threaded.
 pub fn is_single_threaded() -> bool {
     match thread_amount() {
         Some(amount) => amount.get() == 1,
