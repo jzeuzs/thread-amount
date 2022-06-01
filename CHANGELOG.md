@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://github.com/devtomio/thread-amount/compare/v0.1.1...v0.1.2) (2022-06-01)
+
+
+### Bug Fixes
+
+* **docs:** clarify the difference between this crate and `num-threads` ([07fffa2](https://github.com/devtomio/thread-amount/commit/07fffa2c5dad980b2b2c7ff6179ca37af7f7cb65))
+
 ### [0.1.1](https://github.com/devtomio/thread-amount/compare/v0.1.0...v0.1.1) (2022-06-01)
 
 
