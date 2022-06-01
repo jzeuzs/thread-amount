@@ -15,7 +15,6 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
     let pid = process::id();
 
     // https://devblogs.microsoft.com/oldnewthing/20060223-14/?p=32173
-    // https://stackoverflow.com/a/4156593
     unsafe {
         let handle =
             CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0).expect("Failed creating snapshot");

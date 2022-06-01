@@ -86,8 +86,7 @@ jobs:
             rustc --version
           run: |
             export PATH="/usr/local/cargo/bin:$PATH"
-            curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C /usr/local/cargo/bin
-            cargo nextest run
+            cargo test
 
   fmt:
     name: Rustfmt
