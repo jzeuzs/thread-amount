@@ -15,9 +15,6 @@ license = "MIT"
 
 [dependencies]
 
-[target."cfg(unix)".dependencies]
-procfs = "0.12.0"
-
 [target."cfg(windows)".dependencies]
 field-offset = "0.3.4"
 
