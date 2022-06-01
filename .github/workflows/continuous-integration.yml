@@ -85,7 +85,7 @@ jobs:
             setenv PATH "/usr/local/cargo/bin:$PATH"
             rustc --version
           run: |
-            setenv PATH "/usr/local/cargo/bin:$PATH"
+            export PATH="/usr/local/cargo/bin:$PATH"
             curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C /usr/local/cargo/bin
             cargo nextest run
 
