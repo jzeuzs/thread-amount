@@ -10,7 +10,7 @@
 
 ## Example Usage
 
-> Cargo.toml
+`Cargo.toml`
 
 ```toml
 [dependencies]
@@ -55,4 +55,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## License
 
-Licensed under the MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+Licensed under the MIT license ([LICENSE-MIT](LICENSE) or <http://opensource.org/licenses/MIT>)
