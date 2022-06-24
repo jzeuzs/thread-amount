@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/devtomio/thread-amount/compare/v0.1.2...v0.1.3) (2022-06-24)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate windows to 0.38.0 ([#9](https://github.com/devtomio/thread-amount/issues/9)) ([e1143ac](https://github.com/devtomio/thread-amount/commit/e1143ac2aa7d40de1aea950b4bc84fc8977d80b2))
+
 ### [0.1.2](https://github.com/devtomio/thread-amount/compare/v0.1.1...v0.1.2) (2022-06-01)
 
 
