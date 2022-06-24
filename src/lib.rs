@@ -1,3 +1,5 @@
+#![warn(clippy::pedantic)]
+
 use std::num::NonZeroUsize;
 
 #[cfg_attr(target_os = "unix", path = "unix.rs")]
@@ -6,11 +8,13 @@ mod implementation;
 
 /// Gets the amount of threads for the current process.
 /// Returns `None` if there are no threads.
+#[must_use]
 pub fn thread_amount() -> Option<NonZeroUsize> {
     implementation::thread_amount()
 }
 
 /// Check if the current process is single-threaded.
+#[must_use]
 pub fn is_single_threaded() -> bool {
     match thread_amount() {
         Some(amount) => amount.get() == 1,

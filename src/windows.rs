@@ -1,5 +1,5 @@
 use std::num::NonZeroUsize;
-use std::{mem, process};
+use std::{mem, process, ptr};
 
 use field_offset::offset_of;
 use windows::Win32::System::Diagnostics::ToolHelp::{
@@ -21,18 +21,18 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
 
         if !handle.is_invalid() {
             let mut te = THREADENTRY32 {
-                dwSize: mem::size_of::<THREADENTRY32>() as u32,
+                dwSize: mem::size_of::<THREADENTRY32>().try_into().expect("Failed converting usize into u32"),
                 ..Default::default()
             };
 
-            if Thread32First(handle, &mut te as *mut THREADENTRY32).as_bool() {
-                while Thread32Next(handle, &mut te as *mut THREADENTRY32).as_bool() {
+            if Thread32First(handle, ptr::addr_of_mut!(te)).as_bool() {
+                while Thread32Next(handle, ptr::addr_of_mut!(te)).as_bool() {
                     if te.dwSize as usize
                         >= (offset_of!(THREADENTRY32 => th32OwnerProcessID).get_byte_offset()
                             + mem::size_of::<u32>())
                         && te.th32OwnerProcessID == pid
                     {
-                        amount += 1
+                        amount += 1;
                     }
                 }
             }

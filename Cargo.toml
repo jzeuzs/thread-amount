@@ -14,11 +14,13 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mach2 = "0.4.1"
 
-[target."cfg(windows)".dependencies]
+[target.'cfg(windows)'.dependencies]
 field-offset = "0.3.4"
 
-[target."cfg(windows)".dependencies.windows]
+[target.'cfg(windows)'.dependencies.windows]
 version = "0.38.0"
 features = ["alloc", "Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
+
+[target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
+mach2 = "0.4.1"
