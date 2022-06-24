@@ -33,6 +33,10 @@ fn main() {
 }
 ```
 
+## Difference between [`num-threads`](https://crates.io/crates/num-threads)
+
+This crate has windows support and reads the `/proc/[PID]/status` file in `-unix` systems.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
