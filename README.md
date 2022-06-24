@@ -55,4 +55,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## License
 
-Licensed under the MIT license ([LICENSE-MIT](LICENSE) or <http://opensource.org/licenses/MIT>)
+Licensed under the MIT license ([LICENSE](LICENSE) or <http://opensource.org/licenses/MIT>)

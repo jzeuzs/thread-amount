@@ -14,6 +14,7 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+mach2 = "0.4.1"
 
 [target."cfg(windows)".dependencies]
 field-offset = "0.3.4"
