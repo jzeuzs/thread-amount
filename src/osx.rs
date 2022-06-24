@@ -14,7 +14,7 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
         let task = mach_task_self();
         let thread = mach_thread_self();
 
-        task_threads(task, &mut state as thread_act_array_t, &mut count)
+        task_threads(task, state.as_mut_ptr(), &mut count)
     };
 
     if rc == KERN_SUCCESS {
