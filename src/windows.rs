@@ -21,7 +21,9 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
 
         if !handle.is_invalid() {
             let mut te = THREADENTRY32 {
-                dwSize: mem::size_of::<THREADENTRY32>().try_into().expect("Failed converting usize into u32"),
+                dwSize: mem::size_of::<THREADENTRY32>()
+                    .try_into()
+                    .expect("Failed converting usize into u32"),
                 ..Default::default()
             };
 
@@ -39,8 +41,5 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
         }
     }
 
-    match amount {
-        0 => None,
-        num => NonZeroUsize::new(num),
-    }
+    NonZeroUsize::new(amount)
 }

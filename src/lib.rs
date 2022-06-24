@@ -2,6 +2,7 @@
 
 use std::num::NonZeroUsize;
 
+#[cfg_attr(any(target_os = "macos", target_os = "ios"), path = "osx.rs")]
 #[cfg_attr(target_os = "unix", path = "unix.rs")]
 #[cfg_attr(target_family = "windows", path = "windows.rs")]
 mod implementation;
