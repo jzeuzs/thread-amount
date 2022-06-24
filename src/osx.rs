@@ -1,4 +1,3 @@
-use std::mem;
 use std::num::NonZeroUsize;
 
 use mach2::kern_return::KERN_SUCCESS;
