@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/devtomio/thread-amount/compare/v0.1.3...v0.2.0) (2022-06-25)
+
+
+### Features
+
+* add support for osx ([379234d](https://github.com/devtomio/thread-amount/commit/379234d4ea9be3bfc30ce4b97d68835aa9c7e970))
+
+
+### Bug Fixes
+
+* `clippy::pedantic` warnings ([03b32bf](https://github.com/devtomio/thread-amount/commit/03b32bf8db59ea2f35360882e0ce0e58b533362c))
+
 ## [0.1.3](https://github.com/devtomio/thread-amount/compare/v0.1.2...v0.1.3) (2022-06-24)
 
 
