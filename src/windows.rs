@@ -27,8 +27,8 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
                 ..Default::default()
             };
 
-            if Thread32First(handle, ptr::addr_of_mut!(te)).as_bool() {
-                while Thread32Next(handle, ptr::addr_of_mut!(te)).as_bool() {
+            if Thread32First(handle, ptr::addr_of_mut!(te)).is_ok() {
+                while Thread32Next(handle, ptr::addr_of_mut!(te)).is_ok() {
                     if te.dwSize as usize
                         >= (offset_of!(THREADENTRY32 => th32OwnerProcessID).get_byte_offset()
                             + mem::size_of::<u32>())
