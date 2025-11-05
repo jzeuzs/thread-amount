@@ -3,8 +3,8 @@
 [![Crate Version](https://img.shields.io/crates/v/thread-amount)](https://crates.io/crates/thread-amount)
 [![Documentation](https://docs.rs/thread-amount/badge.svg)](https://docs.rs/thread-amount)
 [![License](https://img.shields.io/crates/l/thread-amount.svg)](./LICENSE-APACHE)
-[![Continuous Delivery](https://github.com/devtomio/thread-amount/actions/workflows/continuous-delivery.yml/badge.svg)](https://github.com/devtomio/thread-amount/actions/workflows/continuous-delivery.yml)
-[![Continuous Integration](https://github.com/devtomio/thread-amount/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/devtomio/thread-amount/actions/workflows/continuous-integration.yml)
+[![Continuous Delivery](https://github.com/jzeuzs/thread-amount/actions/workflows/continuous-delivery.yml/badge.svg)](https://github.com/jzeuzs/thread-amount/actions/workflows/continuous-delivery.yml)
+[![Continuous Integration](https://github.com/jzeuzs/thread-amount/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/jzeuzs/thread-amount/actions/workflows/continuous-integration.yml)
 
 **Get the amount of threads in the current process**
 
