@@ -1,5 +1,4 @@
 use std::num::NonZeroUsize;
-use std::ptr;
 
 use mach2::kern_return::KERN_SUCCESS;
 use mach2::task::task_threads;
