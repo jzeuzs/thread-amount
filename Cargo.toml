@@ -16,10 +16,10 @@ license = "MIT"
 [dependencies]
 
 [target.'cfg(windows)'.dependencies]
-field-offset = "0.3.4"
+field-offset = "0.3.6"
 
 [target.'cfg(windows)'.dependencies.windows]
-version = "0.38.0"
+version = "0.48.0"
 features = ["alloc", "Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
