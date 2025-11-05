@@ -11,7 +11,7 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
             let new_line = line.replace(' ', "").to_lowercase().replace("threads:", "");
 
             amount =
-                NonZeroUsize::new(new_line.parse::<usize>().expect("Failed parsing into usize"))
+                NonZeroUsize::new(new_line.parse::<usize>().expect("Failed parsing into usize"));
         }
     }
 
