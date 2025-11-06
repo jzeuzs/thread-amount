@@ -82,7 +82,7 @@ jobs:
             pkg install -y curl python2
             curl https://sh.rustup.rs -sSf --output rustup.sh
             sh rustup.sh -y --profile minimal --default-toolchain stable
-            export PATH "/usr/local/cargo/bin:$PATH"
+            export PATH="/usr/local/cargo/bin:$PATH"
             rustc --version
           run: |
             export PATH="/usr/local/cargo/bin:$PATH"
