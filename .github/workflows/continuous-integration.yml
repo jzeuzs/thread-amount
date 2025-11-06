@@ -86,7 +86,7 @@ jobs:
             rustc --version
           run: |
             export PATH="/usr/local/cargo/bin:$PATH"
-            cargo test
+            cargo test -- --test-threads=1
 
   fmt:
     name: Rustfmt
