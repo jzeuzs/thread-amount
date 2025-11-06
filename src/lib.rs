@@ -25,11 +25,12 @@ pub fn is_single_threaded() -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use std::num::NonZeroUsize;
     use std::sync::{Arc, Barrier};
     use std::thread;
     use std::time::Duration;
+
+    use super::*;
 
     #[track_caller]
     fn wait_for_count_to_stabilize(expected: usize) {
@@ -70,7 +71,7 @@ mod tests {
 
             barrier.wait();
             handle.join().unwrap();
-            
+
             // Ensure count returns to baseline
             wait_for_count_to_stabilize(initial);
         }
@@ -97,7 +98,7 @@ mod tests {
             for handle in handles {
                 handle.join().unwrap();
             }
-            
+
             wait_for_count_to_stabilize(initial);
         }
 
@@ -123,7 +124,7 @@ mod tests {
 
             barrier.wait(); // Release and cleanup
             h1.join().unwrap();
-            
+
             wait_for_count_to_stabilize(initial);
         }
 
@@ -132,12 +133,12 @@ mod tests {
         fn count_decreases_after_join() {
             let initial = thread_amount().unwrap().get();
             let h = thread::spawn(|| thread::sleep(Duration::from_millis(50)));
-            
+
             // Wait for it to be running
             wait_for_count_to_stabilize(initial + 1);
 
             h.join().unwrap();
-            
+
             // Ensure it goes back down
             wait_for_count_to_stabilize(initial);
         }
@@ -206,7 +207,7 @@ mod tests {
             });
 
             barrier.wait(); // Wait for new thread to be definitely active
-            
+
             // Count MUST be higher now
             wait_for_count_to_stabilize(initial + 1);
             assert!(!is_single_threaded(), "Cannot be single-threaded with active child");
@@ -224,4 +225,3 @@ mod tests {
         }
     }
 }
-

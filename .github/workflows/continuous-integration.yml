@@ -69,13 +69,13 @@ jobs:
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Run Tests
-        uses: vmactions/freebsd-vm@9991fc3550abdc19b61d50063c7eeb7713bc498f # v0.3.1
+        uses: vmactions/freebsd-vm@v1
         env:
           RUSTUP_HOME: /usr/local/rustup
           CARGO_HOME: /usr/local/cargo
           RUSTUP_IO_THREADS: 1
         with:
-          envs: RUSTUP_HOME CARGO_HOME RUSTUP_IO_THREADS
+          envs: 'RUSTUP_HOME CARGO_HOME RUSTUP_IO_THREADS'
           usesh: true
           mem: 3000
           prepare: |
