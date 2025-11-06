@@ -63,7 +63,7 @@ jobs:
 
   freebsd-test:
     name: Unit Tests (FreeBSD)
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the Repository
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
