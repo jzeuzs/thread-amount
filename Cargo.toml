@@ -25,5 +25,5 @@ features = ["Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
 mach2 = "0.5.0"
 
-[dev-dependencies]
-serial_test = "3.2.0"
+[target.'cfg(any(target_os = "freebsd", target_os = "linux"))'.dependencies]
+libc = "0.2.177"
