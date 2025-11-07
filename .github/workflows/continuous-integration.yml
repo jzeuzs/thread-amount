@@ -63,30 +63,30 @@ jobs:
 
   freebsd-test:
     name: Unit Tests (FreeBSD)
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the Repository
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Run Tests
-        uses: vmactions/freebsd-vm@9991fc3550abdc19b61d50063c7eeb7713bc498f # v0.3.1
+        uses: vmactions/freebsd-vm@v1
         env:
           RUSTUP_HOME: /usr/local/rustup
           CARGO_HOME: /usr/local/cargo
           RUSTUP_IO_THREADS: 1
         with:
-          envs: RUSTUP_HOME CARGO_HOME RUSTUP_IO_THREADS
+          envs: 'RUSTUP_HOME CARGO_HOME RUSTUP_IO_THREADS'
           usesh: true
           mem: 3000
           prepare: |
             pkg install -y curl python2
             curl https://sh.rustup.rs -sSf --output rustup.sh
             sh rustup.sh -y --profile minimal --default-toolchain stable
-            setenv PATH "/usr/local/cargo/bin:$PATH"
+            export PATH="/usr/local/cargo/bin:$PATH"
             rustc --version
           run: |
             export PATH="/usr/local/cargo/bin:$PATH"
-            cargo test
+            cargo test -- --test-threads=1
 
   fmt:
     name: Rustfmt

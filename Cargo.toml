@@ -5,9 +5,9 @@ edition = "2021"
 description = "Get the amount of threads in the current process"
 keywords = ["thread", "amount", "process", "number", "current"]
 categories = ["os", "os::windows-apis", "os::unix-apis"]
-repository = "https://github.com/devtomio/thread-amount"
+repository = "https://github.com/jzeuzs/thread-amount"
 documentation = "https://docs.rs/thread-amount"
-authors = ["Tomio <mail@tom1o.space>"]
+authors = ["j3z <mail@j3z.dev>"]
 readme = "README.md"
 license = "MIT"
 
@@ -20,7 +20,10 @@ field-offset = "0.3.6"
 
 [target.'cfg(windows)'.dependencies.windows]
 version = "0.62.0"
-features = ["alloc", "Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
+features = ["Win32_System_Diagnostics_ToolHelp", "Win32_Foundation"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
 mach2 = "0.5.0"
+
+[target.'cfg(any(target_os = "freebsd", target_os = "linux"))'.dependencies]
+libc = "0.2.177"
