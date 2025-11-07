@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://github.com/jzeuzs/thread-amount/compare/v0.1.3...v0.2.0) (2025-11-07)
+
+
+### Features
+
+* add support for osx ([379234d](https://github.com/jzeuzs/thread-amount/commit/379234d4ea9be3bfc30ce4b97d68835aa9c7e970))
+
+
+### Bug Fixes
+
+* `clippy::pedantic` warnings ([03b32bf](https://github.com/jzeuzs/thread-amount/commit/03b32bf8db59ea2f35360882e0ce0e58b533362c))
+* **deps:** update all non-major dependencies ([#13](https://github.com/jzeuzs/thread-amount/issues/13)) ([ac7ef0b](https://github.com/jzeuzs/thread-amount/commit/ac7ef0b2eb28916e5e3575f33f56bb438e174c86))
+* **deps:** update all non-major dependencies ([#21](https://github.com/jzeuzs/thread-amount/issues/21)) ([7c58a6b](https://github.com/jzeuzs/thread-amount/commit/7c58a6b2a03baa6400e7cf929c3a293939ad920a))
+* update windows features, osx pointer, unix `cfg` ([#19](https://github.com/jzeuzs/thread-amount/issues/19)) ([3579f5c](https://github.com/jzeuzs/thread-amount/commit/3579f5cd94cc41a9f757c334cb5352e72cd249a8))
+
 ## [0.1.3](https://github.com/devtomio/thread-amount/compare/v0.1.2...v0.1.3) (2022-06-24)
 
 
