@@ -14,7 +14,7 @@
 
 ```toml
 [dependencies]
-thread-amount = "0.1"
+thread-amount = "0.2"
 ```
 
 The code:
