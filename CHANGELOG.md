@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/jzeuzs/thread-amount/compare/v0.2.0...v0.2.1) (2025-11-16)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate mach2 to 0.6.0 ([#25](https://github.com/jzeuzs/thread-amount/issues/25)) ([f94aebf](https://github.com/jzeuzs/thread-amount/commit/f94aebf9649a3ccc7541b65961e91e61b21f3178))
+
 ## [0.2.0](https://github.com/jzeuzs/thread-amount/compare/v0.1.3...v0.2.0) (2025-11-07)
 
 
