@@ -8,7 +8,7 @@ use mach2::port::mach_port_t;
 use mach2::task::task_threads;
 use mach2::traps::mach_task_self;
 use mach2::vm::mach_vm_deallocate;
-use mach2::vm_types::{vm_address_t, vm_size_t};
+use mach2::vm_types::{mach_vm_address_t, mach_vm_size_t};
 
 pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
     unsafe {
@@ -22,8 +22,8 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
         }
 
         let result = NonZeroUsize::new(count as usize);
-        let size = (count as usize * mem::size_of::<mach_port_t>()) as vm_size_t;
-        let _ = mach_vm_deallocate(task, thread_list as vm_address_t, size);
+        let size = (count as usize * mem::size_of::<mach_port_t>()) as mach_vm_size_t;
+        let _ = mach_vm_deallocate(task, thread_list as mach_vm_address_t, size);
 
         result
     }
