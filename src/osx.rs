@@ -1,24 +1,31 @@
 use std::num::NonZeroUsize;
+use std::{mem, ptr};
 
 use mach2::kern_return::KERN_SUCCESS;
+use mach2::mach_types::thread_act_array_t;
+use mach2::message::mach_msg_type_number_t;
+use mach2::port::mach_port_t;
 use mach2::task::task_threads;
 use mach2::traps::mach_task_self;
+use mach2::vm::mach_vm_deallocate;
+use mach2::vm_types::{mach_vm_address_t, mach_vm_size_t};
 
 pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
-    let mut state = [0u32; 1296];
-    let mut count: u32 = 0;
-    let rc = unsafe {
-        task_threads(
-            mach_task_self(),
-            &mut state.as_mut_ptr() as *mut *mut u32,
-            &mut count as *mut _,
-        )
-    };
+    unsafe {
+        let task = mach_task_self();
+        let mut thread_list: thread_act_array_t = ptr::null_mut();
+        let mut count: mach_msg_type_number_t = 0;
+        let rc = task_threads(task, &mut thread_list, &mut count);
 
-    if rc == KERN_SUCCESS {
-        NonZeroUsize::new(usize::try_from(count).expect("Failed converting from u32 to usize"))
-    } else {
-        None
+        if rc != KERN_SUCCESS {
+            return None;
+        }
+
+        let result = NonZeroUsize::new(count as usize);
+        let size = (count as usize * mem::size_of::<mach_port_t>()) as mach_vm_size_t;
+        let _ = mach_vm_deallocate(task, thread_list as mach_vm_address_t, size);
+
+        result
     }
 }
 

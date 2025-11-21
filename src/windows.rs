@@ -2,6 +2,7 @@ use std::num::NonZeroUsize;
 use std::{mem, process, ptr};
 
 use field_offset::offset_of;
+use windows::Win32::Foundation::CloseHandle;
 use windows::Win32::System::Diagnostics::ToolHelp::{
     CreateToolhelp32Snapshot,
     Thread32First,
@@ -39,6 +40,8 @@ pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
                 }
             }
         }
+
+        CloseHandle(handle).expect("Failed closing handle");
     }
 
     NonZeroUsize::new(amount)
