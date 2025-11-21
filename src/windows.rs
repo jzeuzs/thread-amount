@@ -5,10 +5,10 @@ use field_offset::offset_of;
 use windows::Win32::Foundation::CloseHandle;
 use windows::Win32::System::Diagnostics::ToolHelp::{
     CreateToolhelp32Snapshot,
-    Thread32First,
-    Thread32Next,
     TH32CS_SNAPTHREAD,
     THREADENTRY32,
+    Thread32First,
+    Thread32Next,
 };
 
 pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
