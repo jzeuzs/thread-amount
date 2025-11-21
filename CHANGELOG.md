@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/jzeuzs/thread-amount/compare/v0.2.1...v0.2.2) (2025-11-21)
+
+
+### Bug Fixes
+
+* memory leak on windows, macos, and ios ([#29](https://github.com/jzeuzs/thread-amount/issues/29)) ([28860d4](https://github.com/jzeuzs/thread-amount/commit/28860d4a38286609cb884c13b5b7941edc2390e5))
+
 ## [0.2.1](https://github.com/jzeuzs/thread-amount/compare/v0.2.0...v0.2.1) (2025-11-16)
 
 
