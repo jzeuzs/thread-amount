@@ -1,7 +1,7 @@
 [package]
 name = "thread-amount"
 version = "0.2.2"
-edition = "2021"
+edition = "2024"
 description = "Get the amount of threads in the current process"
 keywords = ["thread", "amount", "process", "number", "current"]
 categories = ["os", "os::windows-apis", "os::unix-apis"]
