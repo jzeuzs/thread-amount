@@ -1,5 +1,5 @@
 use std::num::NonZeroUsize;
-use std::ptr;
+use std::{mem, ptr};
 
 use mach2::kern_return::KERN_SUCCESS;
 use mach2::mach_types::{thread_act_array_t, vm_address_t, vm_size_t};
