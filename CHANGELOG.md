@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/jzeuzs/thread-amount/compare/v0.2.2...v0.3.0) (2025-12-05)
+
+
+### Features
+
+* switch to Rust edition 2024 ([#32](https://github.com/jzeuzs/thread-amount/issues/32)) ([739b167](https://github.com/jzeuzs/thread-amount/commit/739b1673342c09175043c30ab757a840a4cd16a5))
+
 ## [0.2.2](https://github.com/jzeuzs/thread-amount/compare/v0.2.1...v0.2.2) (2025-11-21)
 
 
