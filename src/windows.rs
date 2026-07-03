@@ -14,7 +14,7 @@ struct SnapshotHandle(HANDLE);
 
 impl Drop for SnapshotHandle {
     fn drop(&mut self) {
-        if self.0 != INVALID_HANDLE_VALUE && self.0 != 0 {
+        if self.0 != INVALID_HANDLE_VALUE && !self.0.is_null() {
             unsafe {
                 CloseHandle(self.0);
             }
@@ -25,7 +25,7 @@ impl Drop for SnapshotHandle {
 pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
     unsafe {
         let handle = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
-        if handle == INVALID_HANDLE_VALUE || handle == 0 {
+        if handle == INVALID_HANDLE_VALUE || handle.is_null() {
             return None;
         }
 
