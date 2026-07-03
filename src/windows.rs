@@ -1,4 +1,3 @@
-use std::mem;
 use std::num::NonZeroUsize;
 
 use windows_sys::Win32::Foundation::{CloseHandle, HANDLE, INVALID_HANDLE_VALUE};
