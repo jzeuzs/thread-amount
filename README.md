@@ -23,6 +23,7 @@ The code:
 use thread_amount::thread_amount;
 
 use std::thread;
+use std::num::NonZeroUsize;
 
 fn main() {
     let amount = thread_amount();
