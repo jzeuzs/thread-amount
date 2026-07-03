@@ -1,9 +1,10 @@
 use std::num::NonZeroUsize;
 
 use mach2::kern_return::KERN_SUCCESS;
+use mach2::mach_port::mach_port_deallocate;
 use mach2::mach_types::thread_act_array_t;
 use mach2::message::mach_msg_type_number_t;
-use mach2::port::{mach_port_deallocate, mach_port_t};
+use mach2::port::mach_port_t;
 use mach2::task::task_threads;
 use mach2::traps::mach_task_self;
 use mach2::vm::mach_vm_deallocate;
@@ -30,8 +31,8 @@ impl Drop for MachThreadList {
 
             mach_vm_deallocate(
                 mach_task_self(),
-                self.threads as mach2::vm_types::mach_vm_address_t,
-                size as mach2::vm_types::mach_vm_size_t,
+                self.threads as mach_vm_address_t,
+                size as mach_vm_size_t,
             );
         }
     }
