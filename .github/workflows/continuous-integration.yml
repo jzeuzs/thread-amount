@@ -88,6 +88,25 @@ jobs:
             export PATH="/usr/local/cargo/bin:$PATH"
             cargo test -- --test-threads=1
 
+  openbsd-test:
+    name: Unit Tests (OpenBSD)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+  
+      - name: Run Tests
+        uses: vmactions/openbsd-vm@v1
+        with:
+          usesh: true
+          mem: 3000
+          prepare: |
+            pkg_add rust
+            rustc --version
+            cargo --version
+          run: |
+            cargo test -- --test-threads=1
+
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
