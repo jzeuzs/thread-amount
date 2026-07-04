@@ -107,6 +107,29 @@ jobs:
           run: |
             cargo test -- --test-threads=1
 
+  netbsd-test:
+    name: Unit Tests (NetBSD)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+  
+      - name: Run Tests
+        uses: vmactions/netbsd-vm@v1
+        with:
+          usesh: true
+          mem: 3000
+          prepare: |
+            pkgin -y install curl
+            curl https://sh.rustup.rs -sSf --output rustup.sh
+            sh rustup.sh -y --profile minimal --default-toolchain stable
+            export PATH="$HOME/.cargo/bin:$PATH"
+            rustc --version
+            cargo --version
+          run: |
+            export PATH="$HOME/.cargo/bin:$PATH"
+            cargo test -- --test-threads=1
+
   wasm-check:
     name: Build (Wasm)
     runs-on: ubuntu-latest
