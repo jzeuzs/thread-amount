@@ -115,7 +115,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
   
       - name: Run Tests
-        uses: vmactions/netbsd-vm@v1
+        uses: vmactions/netbsd-vm@1d9767765fd3f986e6de3aff4b1148f0c3a45f01 # v1
         with:
           usesh: true
           mem: 3000
