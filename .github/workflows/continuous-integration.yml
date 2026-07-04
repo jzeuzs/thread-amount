@@ -120,8 +120,7 @@ jobs:
           usesh: true
           mem: 3000
           prepare: |
-            pkgin -y install curl
-            curl https://sh.rustup.rs -sSf --output rustup.sh
+            ftp -o rustup.sh https://sh.rustup.rs
             sh rustup.sh -y --profile minimal --default-toolchain stable
             export PATH="$HOME/.cargo/bin:$PATH"
             rustc --version
