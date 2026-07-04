@@ -6,6 +6,7 @@ use std::num::NonZeroUsize;
 #[cfg_attr(any(target_os = "macos", target_os = "ios"), path = "osx.rs")]
 #[cfg_attr(target_os = "freebsd", path = "freebsd.rs")]
 #[cfg_attr(target_os = "openbsd", path = "openbsd.rs")]
+#[cfg_attr(target_os = "netbsd", path = "netbsd.rs")]
 #[cfg_attr(target_os = "linux", path = "linux.rs")]
 #[cfg_attr(target_family = "windows", path = "windows.rs")]
 #[cfg_attr(target_family = "wasm", path = "wasm.rs")]
