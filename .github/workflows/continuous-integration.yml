@@ -107,6 +107,27 @@ jobs:
           run: |
             cargo test -- --test-threads=1
 
+  wasm-check:
+    name: Build (Wasm)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+  
+      - name: Install Rust
+        uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # tag=v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+  
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
+  
+      - name: Check Wasm compatibility
+        run: cargo check --target wasm32-unknown-unknown
+
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest

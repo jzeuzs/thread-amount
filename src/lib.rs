@@ -8,6 +8,7 @@ use std::num::NonZeroUsize;
 #[cfg_attr(target_os = "openbsd", path = "openbsd.rs")]
 #[cfg_attr(target_os = "linux", path = "linux.rs")]
 #[cfg_attr(target_family = "windows", path = "windows.rs")]
+#[cfg_attr(target_family = "wasm", path = "wasm.rs")]
 mod implementation;
 
 /// Gets the amount of threads for the current process.
