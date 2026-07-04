@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0](https://github.com/jzeuzs/thread-amount/compare/v0.3.0...v0.4.0) (2026-07-04)
+
+
+### Features
+
+* implement RAII guards ([#48](https://github.com/jzeuzs/thread-amount/issues/48)) ([f8a0afa](https://github.com/jzeuzs/thread-amount/commit/f8a0afab3812e9482c6bf8555b1a95b064910995))
+* support NetBSD ([#54](https://github.com/jzeuzs/thread-amount/issues/54)) ([b24caf4](https://github.com/jzeuzs/thread-amount/commit/b24caf4169e28fb85fa77260fa74a155b2e424cc))
+* support OpenBSD ([#50](https://github.com/jzeuzs/thread-amount/issues/50)) ([010e6eb](https://github.com/jzeuzs/thread-amount/commit/010e6ebdf91ade2d0c78e4c4ca5edbd147f7858b))
+* support WASM ([#53](https://github.com/jzeuzs/thread-amount/issues/53)) ([e125cc2](https://github.com/jzeuzs/thread-amount/commit/e125cc27f0e13e9bb6e83422ffe184cb5434fd16))
+
 ## [0.3.0](https://github.com/jzeuzs/thread-amount/compare/v0.2.2...v0.3.0) (2025-12-05)
 
 
