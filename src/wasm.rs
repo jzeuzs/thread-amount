@@ -1,9 +1,11 @@
 use std::num::NonZeroUsize;
 
 pub(crate) fn thread_amount() -> Option<NonZeroUsize> {
-    // WebAssembly is single-threaded in standard contexts.
-    // Even when using Web Workers, there's no native OS-level API to query
-    // the process thread count from inside the Wasm module alone.
+    // WebAssembly does not expose OS-level process introspection.
+    // Even if the host environment uses Web Workers, there is no API
+    // to query the active count, and each worker is technically its own
+    // isolated execution context. Therefore, from the perspective of
+    // this executing Wasm instance, the active thread count is 1.
     NonZeroUsize::new(1)
 }
 
