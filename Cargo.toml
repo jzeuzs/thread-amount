@@ -20,7 +20,7 @@ version = "0.61.2"
 features = ["Win32_Foundation", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
-mach2 = "0.6.0"
+mach2 = "0.7.0"
 
 [target.'cfg(any(target_os = "freebsd", target_os = "linux", target_os = "openbsd", target_os = "netbsd"))'.dependencies]
 libc = "0.2"
